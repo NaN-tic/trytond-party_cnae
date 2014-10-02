@@ -1,0 +1,83 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:party.cnae,childs:"
+msgid "Children"
+msgstr "Hijas"
+
+msgctxt "field:party.cnae,code:"
+msgid "Code"
+msgstr "Código"
+
+msgctxt "field:party.cnae,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:party.cnae,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:party.cnae,full_name:"
+msgid "Full Name"
+msgstr "Nombre completo"
+
+msgctxt "field:party.cnae,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:party.cnae,name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:party.cnae,parent:"
+msgid "Parent"
+msgstr "Padre"
+
+msgctxt "field:party.cnae,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:party.cnae,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:party.cnae,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:party.party,cnae:"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "model:ir.action,name:act_party_by_cnae"
+msgid "Parties by CNAE"
+msgstr "Terceros por CNAE"
+
+msgctxt "model:ir.action,name:act_party_cnae_list"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "model:ir.action,name:act_party_cnae_tree"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "model:ir.ui.menu,name:menu_party_cnae_list"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "model:ir.ui.menu,name:menu_party_cnae_tree"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "model:party.cnae,name:"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "view:party.cnae:"
+msgid "CNAE"
+msgstr "CNAE"
+
+msgctxt "view:party.party:"
+msgid "CNAE"
+msgstr "CNAE"
