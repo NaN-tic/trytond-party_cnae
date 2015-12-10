@@ -27,7 +27,7 @@
         <record model="ir.action.act_window" id="act_party_cnae_tree">
             <field name="name">CNAE</field>
             <field name="res_model">party.cnae</field>
-            <field name="domain">[('parent', '=', None)]</field>
+            <field name="domain" eval="[('parent', '=', None)]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_party_cnae_tree_view1">
             <field name="act_window" ref="act_party_cnae_tree"/>
@@ -88,8 +88,8 @@
         <record model="ir.action.act_window" id="act_party_by_cnae">
             <field name="name">Parties by CNAE</field>
             <field name="res_model">party.party</field>
-            <field name="context">{'cnae': Eval('active_id')}</field>
-            <field name="domain">[('cnae', 'child_of', [Eval('active_id')], 'parent')]</field>
+            <field name="context" eval="{'cnae': Eval('active_id')}" pyson="1"/>
+            <field name="domain" eval="[('cnae', 'child_of', [Eval('active_id')], 'parent')]" pyson="1"/>
         </record>
         <record model="ir.action.keyword" id="act_party_by_cnae_keyword1">
             <field name="keyword">tree_open</field>
