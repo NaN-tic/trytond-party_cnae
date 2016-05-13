@@ -2,6 +2,7 @@
 # copyright notices and license terms.
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.pool import PoolMeta
+from trytond.transaction import Transaction
 
 __all__ = ['Cnae', 'Party']
 __metaclass__ = PoolMeta
@@ -49,3 +50,7 @@ class Party:
     cnae = fields.Many2One('party.cnae', 'CNAE')  # , domain=[
             # ('childs', '=', None),
             # ])
+
+    @staticmethod
+    def default_cnae():
+        return Transaction().context.get('cnae')
