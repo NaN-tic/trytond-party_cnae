@@ -5,7 +5,6 @@ from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 
 __all__ = ['Cnae', 'Party']
-__metaclass__ = PoolMeta
 
 
 class Cnae(ModelSQL, ModelView):
@@ -46,10 +45,9 @@ class Cnae(ModelSQL, ModelView):
 
 class Party:
     __name__ = 'party.party'
+    __metaclass__ = PoolMeta
 
-    cnae = fields.Many2One('party.cnae', 'CNAE')  # , domain=[
-            # ('childs', '=', None),
-            # ])
+    cnae = fields.Many2One('party.cnae', 'CNAE')
 
     @staticmethod
     def default_cnae():
