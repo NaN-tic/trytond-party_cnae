@@ -24,7 +24,7 @@ msgstr "Nom complet"
 
 msgctxt "field:party.cnae,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:party.cnae,name:"
 msgid "Name"
