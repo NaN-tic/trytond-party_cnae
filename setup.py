@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-# This file is part party_cnae module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains
-# the full copyright notices and license terms.
+# encoding: utf-8
 
 from setuptools import setup
 import re
@@ -13,7 +11,7 @@ except ImportError:
     from ConfigParser import ConfigParser
 
 MODULE = 'party_cnae'
-PREFIX = 'trytonspain'
+PREFIX = 'nantic'
 MODULE2PREFIX = {}
 
 
@@ -58,13 +56,11 @@ if minor_version % 2:
 
 setup(name='%s_%s' % (PREFIX, MODULE),
     version=version,
-    description='Tryton party_cnae Module',
+    description='Tryton Party cnae Module',
     long_description=read('README'),
-    author='TrytonSpain',
-    author_email='info@trytonspain.com',
-    url='https://bitbucket.org/trytonspain/',
-    download_url="https://bitbucket.org/trytonspain/trytond-%s" % MODULE,
-    keywords='',
+    author='NaN-tic',
+    url='http://www.nan-tic.com/',
+    download_url="https://bitbucket.org/nantic/trytond-%s" % MODULE,
     package_dir={'trytond.modules.%s' % MODULE: '.'},
     packages=[
         'trytond.modules.%s' % MODULE,
@@ -72,8 +68,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     package_data={
         'trytond.modules.%s' % MODULE: (info.get('xml', [])
-            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.odt',
-                'icons/*.svg', 'tests/*.rst']),
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -83,18 +78,8 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         'Intended Audience :: Financial and Insurance Industry',
         'Intended Audience :: Legal Industry',
         'License :: OSI Approved :: GNU General Public License (GPL)',
-        'Natural Language :: Bulgarian',
         'Natural Language :: Catalan',
-        'Natural Language :: Czech',
-        'Natural Language :: Dutch',
         'Natural Language :: English',
-        'Natural Language :: French',
-        'Natural Language :: German',
-        'Natural Language :: Hungarian',
-        'Natural Language :: Italian',
-        'Natural Language :: Portuguese (Brazilian)',
-        'Natural Language :: Russian',
-        'Natural Language :: Slovenian',
         'Natural Language :: Spanish',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
@@ -117,7 +102,4 @@ setup(name='%s_%s' % (PREFIX, MODULE),
     test_loader='trytond.test_loader:Loader',
     tests_require=tests_require,
     use_2to3=True,
-    convert_2to3_doctests=[
-        'tests/scenario_party_cnae.rst',
-        ],
     )
