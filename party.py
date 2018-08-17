@@ -1,13 +1,13 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
-from trytond.model import ModelSQL, ModelView, fields
+from trytond.model import ModelSQL, ModelView, fields, tree
 from trytond.pool import PoolMeta
 from trytond.transaction import Transaction
 
 __all__ = ['Cnae', 'Party']
 
 
-class Cnae(ModelSQL, ModelView):
+class Cnae(ModelSQL, ModelView, tree(separator='/')):
     '''CNAE'''
     __name__ = 'party.cnae'
     _order = 'code'
@@ -19,13 +19,8 @@ class Cnae(ModelSQL, ModelView):
     full_name = fields.Function(fields.Char('Full Name'),
         'get_full_name')
 
-    @classmethod
-    def validate(cls, cnaes):
-        super(Cnae, cls).validate(cnaes)
-        cls.check_recursion(cnaes, rec_name='name')
-
     def get_rec_name(self, name):
-        return u"[%s] %s" % (self.code, self.name)
+        return "[%s] %s" % (self.code, self.name)
 
     @classmethod
     def search_rec_name(cls, name, clause):
@@ -38,14 +33,13 @@ class Cnae(ModelSQL, ModelView):
         res = self.rec_name
         parent = self.parent
         while parent:
-            res = u'%s / %s' % (parent.name, res)
+            res = '%s / %s' % (parent.name, res)
             parent = parent.parent
         return res
 
 
-class Party:
+class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
-    __metaclass__ = PoolMeta
 
     cnae = fields.Many2One('party.cnae', 'CNAE')
 
