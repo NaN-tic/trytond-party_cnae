@@ -14,7 +14,7 @@ class Cnae(ModelSQL, ModelView, tree(separator='/')):
 
     code = fields.Char('Code', required=True)
     name = fields.Char('Name', required=True)
-    parent = fields.Many2One('party.cnae', 'Parent', select=True)
+    parent = fields.Many2One('party.cnae', 'Parent')
     childs = fields.One2Many('party.cnae', 'parent', string='Children')
     full_name = fields.Function(fields.Char('Full Name'),
         'get_full_name')
